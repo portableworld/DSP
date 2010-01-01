@@ -1,0 +1,106 @@
+
+
+Processing MainController#index (for 192.193.221.141 at 2009-11-11 16:20:01) [GET]
+  Parameters: {"action"=>"index", "controller"=>"main"}
+Rendering main/index
+Completed in 23ms (View: 18, DB: 37) | 200 OK [http://www2.allstarradio.com/]
+
+
+Processing SessionController#new (for 192.193.221.141 at 2009-11-11 16:20:17) [GET]
+  Parameters: {"action"=>"new", "controller"=>"session"}
+Rendering template within layouts/session
+Rendering session/new
+Completed in 46ms (View: 36, DB: 0) | 200 OK [http://www2.allstarradio.com/login]
+
+
+Processing MainController#index (for 192.193.221.141 at 2009-11-11 16:25:16) [GET]
+  Parameters: {"action"=>"index", "controller"=>"main"}
+Rendering main/index
+Completed in 19ms (View: 14, DB: 0) | 200 OK [http://www2.allstarradio.com/]
+
+
+Processing SessionController#new (for 192.193.221.141 at 2009-11-11 16:25:21) [GET]
+  Parameters: {"action"=>"new", "controller"=>"session"}
+Rendering template within layouts/session
+Rendering session/new
+Completed in 33ms (View: 28, DB: 0) | 200 OK [http://www2.allstarradio.com/login]
+
+
+Processing MainController#index (for 174.154.35.74 at 2009-11-18 13:52:56) [GET]
+  Parameters: {"action"=>"index", "controller"=>"main"}
+Rendering main/index
+Completed in 121ms (View: 115, DB: 100) | 200 OK [http://www2.allstarradio.com/]
+
+
+Processing MainController#index (for 174.154.35.74 at 2009-11-20 00:31:38) [GET]
+  Parameters: {"action"=>"index", "controller"=>"main"}
+Rendering main/index
+Completed in 222ms (View: 216, DB: 27) | 200 OK [http://rails.allstarradio.com/]
+
+
+Processing MainController#index (for 174.154.35.74 at 2009-11-20 19:15:43) [GET]
+  Parameters: {"action"=>"index", "controller"=>"main"}
+Rendering main/index
+Completed in 26ms (View: 21, DB: 27) | 200 OK [http://dsp.allstarradio.com/]
+
+
+Processing MainController#index (for 174.154.35.74 at 2009-11-20 19:15:54) [GET]
+  Parameters: {"action"=>"index", "controller"=>"main"}
+Rendering main/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://www2.allstarradio.com/]
+
+
+Processing MainController#index (for 174.154.35.74 at 2009-11-20 19:16:00) [GET]
+  Parameters: {"action"=>"index", "controller"=>"main"}
+Rendering main/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://www2.allstarradio.com/]
+
+
+Processing MainController#index (for 174.154.35.74 at 2009-11-20 19:16:03) [GET]
+  Parameters: {"action"=>"index", "controller"=>"main"}
+Rendering main/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://www2.allstarradio.com/]
+
+
+Processing MainController#index (for 174.154.35.74 at 2009-11-20 19:17:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"main"}
+Rendering main/index
+Completed in 22ms (View: 17, DB: 0) | 200 OK [http://dsp.allstarradio.com/]
+
+
+Processing MainController#index (for 174.154.35.74 at 2009-11-20 19:18:25) [GET]
+  Parameters: {"action"=>"index", "controller"=>"main"}
+Rendering main/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://dsp.allstarradio.com/]
+
+
+Processing MainController#index (for 174.154.35.74 at 2009-11-20 19:37:13) [GET]
+  Parameters: {"action"=>"index", "controller"=>"main"}
+Rendering main/index
+Completed in 213ms (View: 116, DB: 2) | 200 OK [http://dsp.allstarradio.com/]
+
+
+Processing MainController#index (for 207.119.219.171 at 2009-11-20 22:41:30) [GET]
+  Parameters: {"action"=>"index", "controller"=>"main"}
+Rendering main/index
+Completed in 60ms (View: 55, DB: 98) | 200 OK [http://dsp.allstarradio.com/]
+
+
+Processing SessionController#new (for 207.119.219.171 at 2009-11-20 22:41:34) [GET]
+  Parameters: {"action"=>"new", "controller"=>"session"}
+Rendering template within layouts/session
+Rendering session/new
+Completed in 85ms (View: 80, DB: 0) | 200 OK [http://dsp.allstarradio.com/login]
+
+
+Processing SessionController#create (for 207.119.219.171 at 2009-11-20 22:41:46) [POST]
+  Parameters: {"commit"=>"Log in", "action"=>"create", "authenticity_token"=>"djzq4ppfUqXdIfHNaHuL7zPDkWkUve9iJMEqHy/Ls04=", "controller"=>"session", "login"=>"charlie", "password"=>"[FILTERED]"}
+Rendering template within layouts/session
+Rendering session/new
+Completed in 388ms (View: 25, DB: 358) | 200 OK [http://dsp.allstarradio.com/session]
+
+
+Processing MainController#index (for 174.154.35.74 at 2009-11-20 22:56:29) [GET]
+  Parameters: {"action"=>"index", "controller"=>"main"}
+Rendering main/index
+Completed in 22ms (View: 17, DB: 99) | 200 OK [http://dsp.allstarradio.com/]

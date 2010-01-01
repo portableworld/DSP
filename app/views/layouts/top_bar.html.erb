@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>All Star Radio</title>
+  <%= stylesheet_link_tag 'start/jquery-ui', 'main' %>
+  <%= javascript_include_tag :defaults, 'ui.core.js', 'top_bar_view.js' %>
+  
+      <style type="text/css"> 
+<!--
+#header {
+	position: absolute;
+	left: 170px;
+	top: 5px;
+}
+ 
+a:link { text-decoration: none }
+a:visited { text-decoration:none;
+			color:#00F }
+a:hover { text-decoration:underline }
+ 
+-->
+    </style> 
+	
+</head>
+<body>
+
+
+<%= yield %>
+
+</body>
+</html>

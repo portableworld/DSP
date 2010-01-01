@@ -1,0 +1,18 @@
+<p>
+  <b>Href:</b>
+  <%=h @link.href %>
+</p>
+
+<p>
+  <b>Order:</b>
+  <%=h @link.order %>
+</p>
+
+<p>
+  <b>Panel:</b>
+  <%=h @link.panel_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_link_path(@link) %> |
+<%= link_to 'Back', links_path %>

@@ -1,0 +1,20 @@
+<%= image_tag 'asrnlogotrans.png' %>
+
+<table id = "header" border="0" width="80%">
+    	<tr>
+    		<td colspan="4"><span style="font-size: 50px">Daily Comedy Exclusive</span>&nbsp;&nbsp;&nbsp;<span style="font-size:16px">Publishing Since 1995</span>
+            </td>
+      </tr>
+      <tr>
+      		<td width="30%" style="font-size:14px;">
+			Today's Date: <b><%= Date.today.to_s(:long) %></b><span id="nowDate"></span>
+            </td>
+            <td width="18%" style="font-size:14px;"><b style="color:#00F"><a href = "#">Search</a></b>
+            </td>
+            <td><span style="font-size:14px">Show Date: </span><span id="showDate" style="color:#C00; font-size:14px; font-weight:bold"></span> 
+            <img id = "calImg" src="images/calendar.jpg" style="cursor:pointer" />
+            </td>
+            <td style="font-size:14px;"><b style="a{color:#00F;}">
+			<%= link_to 'Open Show in New Window',  contents_user_path(@user), {:target => '_blank' } %></b></td>
+      </tr>
+    </table>

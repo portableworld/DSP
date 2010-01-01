@@ -1,0 +1,21 @@
+<% if current_user %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>All Star Radio</title>
+</head>
+<frameset rows = "115,*" id = "headerSet" frameborder="yes" border="1" framespacing="0">
+	<frame src = "<%= top_bar_path %>" name="headerFrame" scrolling="no" noresize="noresize" id="headerFrame" title="headerFrame" />
+<frameset cols="50%,50%" frameborder="yes" border="1" framespacing="0">
+  <frame src="<%= panels_path %>" name="prepFrame" id="prepFrame" title="prepFrame" noresize="noresize" />
+  <frame src="<%= users_path %>" name="showFrame" id="showFrame" title="showFrame" noresize="noresize" />
+</frameset>
+</frameset>
+<noframes><body>
+</body></noframes>
+</html>
+<% else %>
+<p>Please <%= link_to 'login', login_path %> before using the system.</p>
+<% end %>

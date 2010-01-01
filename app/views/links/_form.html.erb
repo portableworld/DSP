@@ -1,0 +1,33 @@
+<% form_for([@panel, @link]) do |f| %>
+<%= f.error_messages %>
+  <% if @panel.live_state == "Live" %>
+  Should this
+  <% if controller.action_name == "new" %>
+  new
+  <% else %>
+  edited
+  <% end %>
+  link make its containing cell appear unread to everyone?<br />
+<input id="unread_status" name="unread" type="radio" value="Yes" />Yes<br />
+<input checked="checked" id="unread_status" name="unread" type="radio" value="No" />No<br />
+<% end %>
+<p>
+    <b>Web Address</b><br />
+    http://<%= f.text_field :href %>
+</p>
+	<% if controller.action_name == "new" %>
+    	<%= f.hidden_field :order, {:value => @link_count } %>
+	<% else %>
+		<%= f.hidden_field :order %>
+	<% end %>
+	
+    <%= f.hidden_field :panel_id %>
+	
+<p>
+	<% if controller.action_name == "new" %>
+		<%= f.submit 'Create' %>
+	<% else %>
+		<%= f.submit 'Update' %>
+	<% end %>
+</p>
+<% end %>

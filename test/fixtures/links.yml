@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  href: MyString
+  order: 1
+  panel_id: 1
+
+two:
+  href: MyString
+  order: 1
+  panel_id: 1

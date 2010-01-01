@@ -1,0 +1,34 @@
+<h1>New Content Cell</h1>
+
+<% form_for(@panel) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %> - or -
+
+    <select id="titles" name="#">
+      <option>...Choose from a list</option>
+      <option>Top o' the news</option>
+      <option>Around the Nation</option>
+      <option>Around the Globe</option>
+      <option>Show Bizz Buzz</option>
+      <option>On This Day</option>
+      <option>Thought for the Day</option>
+      <option>Top Twitters</option>
+      <option>Birthdays for (date)</option>
+      <option>Genius Award</option>
+      <option>The Birthday Contest</option>
+    </select>
+  </p>
+  <p>
+    <%= f.label 'Made on date (usually just today)' %><br />
+    <%= f.date_select :date_made %>
+  </p>
+
+    
+    <%= f.hidden_field :live_state, :value => 'Draft' %>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>

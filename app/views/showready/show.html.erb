@@ -1,0 +1,33 @@
+
+
+<table width="131" border="0" align="left">
+  <tr>
+    <td width="125" align="center"><a href="#" id="font_plus" onclick="changeFont('up');this.blur();return false;"><span>+</span></a></td>
+  </tr>
+  <tr>
+    <td align="center"><%= image_tag("font_size.png", {:id => "font_size"}) %></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="#" id="font_minus" onclick="changeFont('down');this.blur();return false;"><span>-</span></a>
+        </td>
+  </tr>
+</table>
+
+<div id="show_date" style="z-index:-1">
+  Show Date: <%= @show_date.showdate.to_s(:long) %>
+</div>
+
+<table width="174" border="0" align="right">
+  <tr>
+    <td width="54" style= "font-weight: bold;"><a href="javascript:window.print()" style="color:#00C; font-weight: normal;" id="print_link">Print</a></td>
+    <td width="110" style="font-weight: bold;"><a href="javascript:window.close()" style="color:#C00; font-weight: normal;" id="close_link">Close Window</a></td>
+  </tr>
+</table>
+<br /><br /><br /><br /><br />
+<hr />
+
+<% @show.each do |content| %>
+  <p>
+    <%= check_box_tag 'done', '#', false, :class => 'done' %> | <span><%= content.body %></span>
+  </p>
+  <% end %>

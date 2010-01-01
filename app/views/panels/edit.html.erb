@@ -1,0 +1,22 @@
+<h1>Editing Cell</h1>
+
+<% form_for(@panel) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :date_made %><br />
+    <%= f.date_select :date_made %>
+  </p>
+  <p>
+    <%= f.label :live_state %><br />
+    <%= f.radio_button :live_state, 'Live' %>Live<br />
+	<%= f.radio_button :live_state, 'Draft' %>Draft
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>

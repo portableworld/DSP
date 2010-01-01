@@ -1,0 +1,43 @@
+<p>
+  <b>Title:</b>
+  <%=h @panel.title %>
+</p>
+
+<p>
+  <b>Date made:</b>
+  <%=h @panel.date_made %>
+</p>
+
+<p>
+  <b>Live state:</b>
+  <%=h @panel.live_state %>
+</p>
+
+
+<%= link_to 'Edit Cell Info', edit_panel_path(@panel) %> 
+<hr />
+<%= link_to [image_tag 'add_link.gif', :border => '0' ], new_panel_link_path(@panel), {:class => 'image_link'} %>  
+<%= link_to [image_tag 'add_content.gif', :border => '0'], new_panel_content_path(@panel), {:class => 'image_link'} %>
+<br /><br />
+<b>Links</b><br />
+<span id = "links">
+	<% for link in @links %>
+		<% content_tag_for :p, link do %>
+			<%= link_to link.href, 'http://'+link.href %> | <%= link_to 'Edit', edit_panel_link_path(@panel, link) %>
+			| <%= link_to 'Delete', panel_link_path(@panel, link), :confirm => 'Are you sure?', :method => :delete %>
+			| <span class = "handle">[Drag]</span>
+			<% end %>
+	<% end %>
+</span>
+<%= sortable_element("links", :url => sort_panels_path(:type => "link"), :handle => "handle") %>
+<b>Content</b><br />
+<span id = "contents">
+	<% for content in @contents %>
+		<% content_tag_for :p, content do %>
+			<%= simple_format(content.body) %> | <%= link_to 'Edit', edit_panel_content_path(@panel, content) %>
+			| <%= link_to 'Delete', panel_content_path(@panel, content), :confirm => 'Are you sure?', :method => :delete %>
+			| <span class = "handle">[Drag]</span>
+		<% end %>
+	<% end %>
+</span>
+<%= sortable_element("contents", :url => sort_panels_path(:type => "content"), :handle => "handle") %>

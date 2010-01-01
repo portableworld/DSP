@@ -1,0 +1,169 @@
+@charset "utf-8";
+.title {
+	font-size: 20px;
+	cursor:pointer;
+	padding: 15px;
+}
+
+.panel {
+	border: thin solid #000;
+	background-color:white;
+	position:relative;
+	margin-left: 15px;
+	margin-right: 15px;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.5) 5px 5px 5px;
+	-moz-box-shadow: rgba(0, 0, 0, 0.5) 5px 5px 5px;
+}
+
+.edit_menu {
+	position:absolute;
+	top: 15px;
+	right: 30px;
+}
+
+.content {
+	position:relative;
+}
+
+.link {
+        position:relative;
+}
+
+
+.add_dot {
+	position: absolute;
+	top: 10%;
+	right: -24px;
+	cursor:pointer;
+}
+
+.add_dot_links {
+    	position: absolute;
+	top: 10%;
+        right: -24px;
+        cursor:pointer;
+}
+
+
+
+.greendot {
+	position: absolute;
+	top: 15px;
+	left: -10px;
+}
+
+.filling {
+	padding-left:15px;
+	padding-right:15px;
+}
+
+.delete {
+	cursor:pointer;
+	position:absolute;
+	top:10px;
+	right:10px;
+}
+
+.panel_drag {
+	cursor:move;
+	border: thin solid #000;
+	position:relative;
+	margin-left: 15px;
+	margin-right: 15px;
+    background-color: white;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.5) 5px 5px 5px;
+	-moz-box-shadow: rgba(0, 0, 0, 0.5) 5px 5px 5px;
+}
+
+.filling_drag {
+	padding-left:15px;
+	padding-right:40px;
+}
+
+.date_made {
+	position:absolute;
+	font-size:11px;
+	top:2px;
+	left:5px;
+}
+
+.handle {
+	cursor:move;
+}
+
+#show_date {
+    
+    font-size: 18pt;
+    position: relative;
+    top: 10px;
+}
+
+#font_size {
+    
+    position: absolute;
+    top: 100px;
+    left: 68px;
+    height: 20px;
+}
+
+#font_minus {
+    position: absolute;
+    top: 100px;
+    left: 27px;
+    background: transparent url('../images/minus.png') no-repeat scroll top right;
+    display: block;
+    float: left;
+    height: 20px;
+    margin-right: 6px;
+    padding-right: 18px;
+    padding-left: 18px;
+    text-decoration: none;
+    color: #444;
+}
+
+#font_plus {
+    position: absolute;
+    top: 100px;
+    left: 148px;
+    background: transparent url('../images/plus.png') no-repeat scroll top right;
+    display: block;
+    float: left;
+    height: 20px;
+    margin-right: 6px;
+    padding-right: 18px;
+    padding-left: 18px;
+    text-decoration: none;
+    color: #444;
+    font-weight: bold;
+}
+
+#font_plus:active {
+    background-position: bottom right;
+    outline: none;
+}
+#font_plus:active span {
+    position: relative;
+    top: 1px;
+}
+
+#font_minus:active {
+    background-position: bottom right;
+    outline: none;
+}
+
+#font_minus:active span {
+    position: relative;
+    top: 1px;
+}
+
+#print_link {
+    position: absolute;
+    top: 100px;
+}
+
+#close_link {
+    position: absolute;
+    top: 100px;
+}
+
+.ui-datepicker-div, .ui-datepicker-inline, #ui-datepicker-div {font-size:0.8em}

@@ -1,0 +1,12 @@
+<% if controller.action_name == 'show' %>
+	<%= link_to 'Back to Main Page', root_path %>
+	<hr />
+<% elsif controller.action_name == 'new' and controller.controller_name == 'panels' %>
+	<%= link_to 'Back to Main Page', root_path %>
+	<hr />	
+<% elsif controller.action_name == 'index' %>
+	<!-- No breadcrumbs required on this page -->
+<% else %>
+	<%= link_to 'Back to Main Page', root_path %> > <%= link_to 'Back to Cell\'s Page', @panel %>
+	<hr />
+<% end %>
