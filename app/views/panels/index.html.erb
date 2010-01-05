@@ -1,5 +1,5 @@
-<% if current_user.admin? %><p>
-    <%= link_to 'New Content Cell', new_panel_path, {:target => '_parent' } %>
+<% if current_user.admin? %><p class = 'add_new'>
+    <%= link_to 'Add Content Cell', new_panel_path, {:target => '_parent' } %>
   </p>
 <% end %>
 
@@ -30,13 +30,13 @@
                           <div class='sent_link' id = "span<%= link.id %>">
                                 (<%= link_to link.href, 'http://'+link.href, {:target => '_blank' }%>)
                           </div>
-				<%= link_to_remote(image_tag('bluedot.gif', {:class => 'add_dot_links', :border => '0',
+				<%= link_to_remote(image_tag('add_dot.png', {:class => 'add_dot_links', :border => '0',
 							:style => 'visibility: hidden', :id => 'dot_link_'+link.id.to_s}),
 						:url => {:controller => 'users', :action => 'link_add', :link => link} ) %>
                        
 			<% else %>
 				(<%= link_to link.href, 'http://'+link.href, {:target => '_blank' }%>)
-				<%= link_to_remote(image_tag('bluedot.gif', {:class => 'add_dot_links', :border => '0',
+				<%= link_to_remote(image_tag('add_dot.png', {:class => 'add_dot_links', :border => '0',
 							:id => 'dot_link_'+link.id.to_s}),
 						:url => {:controller => 'users', :action => 'link_add', :link => link}) %>
 			<% end %>
@@ -63,12 +63,12 @@
         <div id = "content_<%=h content.id %>" class = "content">
           <% if @compiles_boolean %>
               <div class='sent_content' id="span<%= content.id%>"><%= simple_format(content.body) %></div>
-               <%= link_to_remote(image_tag('bluedot.gif', {:class => 'add_dot', :border => '0',
+               <%= link_to_remote(image_tag('add_dot.png', {:class => 'add_dot', :border => '0',
                      :style => 'visibility: hidden', :id =>  'dot_content_'+content.id.to_s}), :url =>
               {:controller => 'users', :action => 'content_add', :content => content} ) %>
           <% else %>
                   <%= simple_format(content.body) %>
-               <%= link_to_remote(image_tag('bluedot.gif', {:class => 'add_dot', :border => '0', :id =>  'dot_content_'+content.id.to_s}), :url =>
+               <%= link_to_remote(image_tag('add_dot.png', {:class => 'add_dot', :border => '0', :id =>  'dot_content_'+content.id.to_s}), :url =>
               {:controller => 'users', :action => 'content_add', :content => content} ) %>
           <% end %>
         </div>
@@ -83,7 +83,7 @@
 
        <% end %>
        <% unless @visuals_boolean %>
-          <%= image_tag('greendot.gif', {:class => 'greendot'}) %>
+          <%= image_tag('greendot.png', {:class => 'greendot'}) %>
 
        <% end %>
 

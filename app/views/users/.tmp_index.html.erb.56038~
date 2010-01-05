@@ -1,0 +1,28 @@
+<p id ="update_link">
+  <%= link_to 'Content added to show. Click to refresh', '#' %>
+</p>
+
+<% if @show.empty? %>
+  There's no content for this date yet. 
+<% else %>
+
+<div id="sortable_show">
+
+<% @show.each do |content| %>
+  <% content_tag_for(:div, content) do %>
+  <div class="panel_drag">
+    <%= link_to_remote(image_tag("minus_dot.png", {:class => "delete", :border => '0'}), :url =>
+              {:controller => 'users', :action => 'content_delete', :content => content}) %>
+    
+    <p class="filling_drag">
+      <%=h content.body %>
+    </p>
+  </div>
+  <br />
+  <% end %>
+  <% end %>
+
+</div>
+<%= sortable_element("sortable_show", :url => sort_users_path) %>
+
+<% end %>

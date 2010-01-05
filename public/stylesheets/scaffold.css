@@ -8,9 +8,28 @@ pre {
   font-size: 11px;
 }
 
-a { color: #000; }
-a:visited { color: #666; }
-a:hover { color: #fff; background-color:#000; }
+.add_new a { 
+	color: #fff;
+	text-decoration: none;
+}
+.panel a, a {
+	color: #666;
+	text-decoration: none;
+}
+
+.add_new a:visited { color: #fff; }
+.panel a:visited, a:visited { color: #666; }
+
+.add_new a:hover { 
+	color: #fff; 
+	text-shadow: 2px 2px 2px #000;
+
+}
+
+.panel a:hover, a:hover {
+	color: #000;
+	text-shadow: 2px 2px 2px #000;
+}
 
 a.image_link:hover {background-color:#fff;}
 

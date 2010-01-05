@@ -1,9 +1,9 @@
-<p id ="update_link">
+<p id ="update_link" class="add_new" style="background-color:#730000;">
   <%= link_to 'Content added to show. Click to refresh', '#' %>
 </p>
 
 <% if @show.empty? %>
-  There's no content for this date yet. 
+  <p style="color:#fff;">There's no content for this date yet. </p>
 <% else %>
 
 <div id="sortable_show">
@@ -11,7 +11,7 @@
 <% @show.each do |content| %>
   <% content_tag_for(:div, content) do %>
   <div class="panel_drag">
-    <%= link_to_remote(image_tag("btn-delete.gif", {:class => "delete", :border => '0'}), :url =>
+    <%= link_to_remote(image_tag("minus_dot.png", {:class => "delete", :border => '0'}), :url =>
               {:controller => 'users', :action => 'content_delete', :content => content}) %>
     
     <p class="filling_drag">

@@ -1,0 +1,103 @@
+<% if current_user.admin? %><p>
+    <%= link_to 'New Content Cell', new_panel_path, {:target => '_parent' } %>
+  </p>
+<% end %>
+
+<% #Start building the panels %>
+<% @panels.each do |panel| %> 
+
+  <div class = "panel" id = "panel<%=h panel.id %>" 
+       <% if panel.live_state == "Draft" %>
+       style="background-color:#F9F465"
+       <% end %>
+       >
+    <div class = "date_made"><%=h panel.date_made.to_s(:long) %></div>
+    <div class = "title"><%=h panel.title %></div>
+    <span class = "filling">
+      <br />
+	  
+	  <% #Build the Links %>
+      <% @l = panel.links.sort_by { |links| links[:order] } %>
+      <% @l.each do |link| %>
+	  	<% @links_boolean = false %>
+		<% @links.each do |l| %>
+			<% if l.link_id == link.id %>
+				<% @links_boolean = true %>
+			<% end %>
+		<% end %>
+		<div id = "link_<%= link.id %>" class = "link">
+			<% if @links_boolean %>
+                          <div class='sent_link' id = "span<%= link.id %>">
+                                (<%= link_to link.href, 'http://'+link.href, {:target => '_blank' }%>)
+                          </div>
+				<%= link_to_remote(image_tag('bluedot.gif', {:class => 'add_dot_links', :border => '0',
+							:style => 'visibility: hidden', :id => 'dot_link_'+link.id.to_s}),
+						:url => {:controller => 'users', :action => 'link_add', :link => link} ) %>
+                       
+			<% else %>
+				(<%= link_to link.href, 'http://'+link.href, {:target => '_blank' }%>)
+				<%= link_to_remote(image_tag('bluedot.gif', {:class => 'add_dot_links', :border => '0',
+							:id => 'dot_link_'+link.id.to_s}),
+						:url => {:controller => 'users', :action => 'link_add', :link => link}) %>
+			<% end %>
+			
+        <br /><br />
+		
+		</div>
+      <% end %>
+	  
+      <% #Build the Content %>
+      <% @c = panel.contents.sort_by { |contents| contents[:order] } %>
+      <% @c.each do |content| %>
+	  <% #Set this variable to false 
+			#The next loop determines whether there's a Compilation 
+			#connected to the current Content
+			#There's a different setup for false and true %>
+        <% @compiles_boolean = false %>
+        <% @compiles.each do |c| %>
+			<% #break if @compiles_boolean %>
+          <% if c.content_id == content.id %>
+            <% @compiles_boolean = true %>
+          <% end %>
+        <% end %>
+        <div id = "content_<%=h content.id %>" class = "content">
+          <% if @compiles_boolean %>
+              <div class='sent_content' id="span<%= content.id%>"><%= simple_format(content.body) %></div>
+               <%= link_to_remote(image_tag('bluedot.gif', {:class => 'add_dot', :border => '0',
+                     :style => 'visibility: hidden', :id =>  'dot_content_'+content.id.to_s}), :url =>
+              {:controller => 'users', :action => 'content_add', :content => content} ) %>
+          <% else %>
+                  <%= simple_format(content.body) %>
+               <%= link_to_remote(image_tag('bluedot.gif', {:class => 'add_dot', :border => '0', :id =>  'dot_content_'+content.id.to_s}), :url =>
+              {:controller => 'users', :action => 'content_add', :content => content} ) %>
+          <% end %>
+        </div>
+      <% end %>
+    </span>
+    <% #Here's the Visualizations loop %>
+    <% @visuals_boolean = false %>
+    <% @visuals.each do |v|  %>
+      <% if v.panel_id == panel.id %>
+        <% @visuals_boolean = true %>
+       <% end %>
+
+       <% end %>
+       <% unless @visuals_boolean %>
+          <%= image_tag('greendot.gif', {:class => 'greendot'}) %>
+
+       <% end %>
+
+    <% if current_user.admin? %>
+      <div class = "edit_menu">
+        <%= link_to 'Edit', panel, {:target => '_parent' } %> |
+        <%= link_to 'Delete', panel, :confirm => 'Are you sure?', :method => :delete %>
+      </div>
+
+    <% end %>
+  </div>
+  <br />
+<% end %>
+
+
+<br />
+

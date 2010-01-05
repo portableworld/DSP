@@ -37,7 +37,7 @@ jQuery.ajaxSetup({
                 var $showFrame = top.frames["showFrame"];
                 var $updateLink = $showFrame.document.getElementById('update_link');
                 if ($($updateLink).is(':hidden')){
-                    $($updateLink).effect("highlight", {}, 3000);
+                    $($updateLink).effect("highlight", {color: 'white'}, 3000);
                 }
 	});
 
