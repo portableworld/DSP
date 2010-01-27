@@ -59,26 +59,45 @@ layout "show_content"
   end
   
   def content_add
-    @content = Content.find(params[:content])
+	# Should first check params to see if incoming content is 'Content' or 'Link'	
+	unless params[:content].empty? then
+		@content = Content.find(params[:content])
+		@link = ""
+	else
+		@link = Link.find(params[:link])
+		@content = ""
+	end
+	
+	# Get date of the show the content is for
     @show_date = ShowdateLink.find_by_user_id(@user)
-    c = Compilation.new
-    
+	
+	# Start up new Compilation and then populate it
+    c = Compilation.new  
     c.user_id = current_user.id
-    c.content_id = @content.id
+    c.content_id = @content.id unless @content.empty? # Only populates c if there's anything in @content
+	c.link_id = @link.id unless @link.empty? # Same as above
     c.show_date = @show_date.showdate
     c.save!
-
+	
+	# Bounce back nothing. 
     render :nothing => true
   end
 
   def content_delete
-    @compilation = Compilation.find_all_by_content_id_and_user_id(params[:content], current_user.id)
-
-    @compilation[0].destroy
-
+	# Should first check params to see if incoming content is 'Content' or 'Link'	
+	unless params[:content].empty? then
+		@content = Compilation.find_all_by_content_id_and_user_id(params[:content], current_user.id)
+		@content[0].destroy
+	else
+		@link = Compilation.find_all_by_link_id_and_user_id(params[:link], current_user.id)
+		@link[0].destroy
+	end
+	
+	# Bounce back nothing
     render :nothing => true
   end
 
+	# This def is marked for deletion
   def link_add
     @link = Link.find(params[:link])
     @show_date = ShowdateLink.find_by_user_id(@user)
@@ -92,6 +111,7 @@ layout "show_content"
     render :nothing => true
   end
 
+	# This def is marked for deletion
   def link_delete
     @linkalation = Linkalation.find_by_link_id_and_user_id(params[:link], current_user.id)
 
@@ -108,8 +128,7 @@ layout "show_content"
     render :nothing => true
   end
 
-  def sort
-    
+  def sort 
     params[:sortable_show].each_with_index do |id,index|
       @to_update = Compilation.find_all_by_content_id_and_user_id(id, current_user.id)
       Compilation.update_all(['"order"=?', index+1], ['"id"=?', @to_update[0].id])
@@ -120,6 +139,8 @@ layout "show_content"
 
 protected
 
+# I wrote this but I don't seem to be using it. 
+# Start using it or trash it.
 def get_user_id
   if current_user
   @user = User.find(current_user.id)
